@@ -147,9 +147,14 @@ explicitly' step, which I generally do.
 
 Suppose you're unhappy with the latest commit or commit message -- how can
 you move back to an old version?  This is actually fairly complicated and
-rich with many different possibilities, but the main thing you'll probably
-end up needing to do is roll back to the latest commit -- to do that,
-do ::
+rich with many different possibilities, but for minor changes, its easiest
+to stage any file changes you forgot and run::
+
+  % git commit --amend
+
+which squashes the new changes onto the last commit and allows you to edit
+the old commit message.  When you need to make more drastic changes, you
+can roll back the last coommit completely -- to do that, do ::
 
   % git reset HEAD^
 
